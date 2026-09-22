@@ -1,24 +1,20 @@
-const express = require("express");
+const http = require("http")
 
-const app = express();
+const hostname = "127.0.0.1";
+const port = 3000;
 
-const PORT = process.env.PORT || 3000;
+const server = http.createServer ((req, res) => {
+    let method = req.method +  " ";
+    let url = req.url + "\n\n";
+    let headers = JSON.stringify (req.headers, null, 4);
 
-app.get("/", (req, res) => {
-    res.send(`
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <title>Course Server</title>
-        </head>
-        <body>
-            <h1>Hello from Laura Katsman's server!</h1>
-            <p>This page is being served by Node.js and Express.</p>
-        </body>
-        </html>
-    `);
+    res.writeHead(200,{'Content-Type': 'text/plain'});
+    res.write (method);
+    res.write(url);
+    res.write(headers);
+    res.end();
 });
 
-app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server listening on port ${PORT}`);
+server.listen(port, hostname, () =>{
+    console.log (`Server running on http://${hostname}:${port}`);
 });
