@@ -1,9 +1,9 @@
 const http = require("http")
 
-const hostname = "127.0.0.1";
-const port = 3001;
+const hostname = "0.0.0.0";
+const port = 3000;
 
-const server = http.createServer ((req, res) => {
+const server = http.createServer ((req, res) => {d
     let method = req.method +  " ";
     let url = req.url + "\n\n";
     let headers = JSON.stringify (req.headers, null, 4);
