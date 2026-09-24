@@ -1,21 +1,22 @@
-const http = require("http")
+const express = require("express")
 
-const hostname = "0.0.0.0";
+const app = express();
 const port = 3000;
 
-const server = http.createServer ((req, res) => {
-    let method = req.method +  " ";
-    let url = req.url + "\n\n";
-    let headers = JSON.stringify (req.headers, null, 4);
-
-    res.writeHead(200,{'Content-Type': 'text/plain'});
-    res.write (method);
-    res.write(url);
-    res.write(headers);
-    res.end();
+app.get ("/", (req, res) =>{
+    res.status(200).send( "Hello, Express");
 });
 
-server.listen(port, hostname, () =>{
-    console.log("new");
+app.get('/api/getName', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.json({ name: "Laura's Website" });
+});
+
+ app.get('/api/getImage', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.sendFile('C:\Users\Laura\Documents\Adv Int Programing\Exersice\library_homepage.jpg');
+});
+
+server.listen(port, () =>{
     console.log (`Server running on https://three909-exercise.onrender.com/`);
 });
