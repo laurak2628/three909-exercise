@@ -12,7 +12,6 @@ app.get('/api/getName', (req, res) => {
     res.json({ name: "Library Website" });
 });
 
-
-server.listen(port, () =>{
+app.listen(port, () =>{
     console.log (`Server running on https://three909-exercise.onrender.com/`);
 });
