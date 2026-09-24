@@ -16,5 +16,6 @@ const server = http.createServer ((req, res) => {
 });
 
 server.listen(port, hostname, () =>{
+    console.log("new");
     console.log (`Server running on https://three909-exercise.onrender.com/`);
 });
