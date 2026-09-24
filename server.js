@@ -4,7 +4,7 @@ const app = express();
 const port = 3000;
 
 app.get ("/", (req, res) =>{
-    res.status(200).send( "Hello, Express");
+    res.status(200).send( "Welcome to my Library site...more content to follow");
 });
 
 app.get('/api/getName', (req, res) => {
