@@ -9,7 +9,7 @@ app.get ("/", (req, res) =>{
 
 app.get('/api/getName', (req, res) => {
     res.set('Access-Control-Allow-Origin', '*');
-    res.json({ name: "Laura's Website" });
+    res.json({ name: "Library Website" });
 });
 
 
