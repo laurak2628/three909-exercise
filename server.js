@@ -14,7 +14,7 @@ app.get('/api/getName', (req, res) => {
 
 app.get('/api/getImage', (req, res) => {
     res.set('Access-Control-Allow-Origin', '*');
-    res.sendFile('C:\Users\Laura\Documents\Adv Int Programing\Exersice\library_homepage.jpg');
+    res.sendFile("C:\Users\Laura\Documents\Adv Int Programing\Exersice\library_homepage.jpg");
 });
 
 app.listen(port, () =>{
