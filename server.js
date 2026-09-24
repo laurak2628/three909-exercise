@@ -12,6 +12,11 @@ app.get('/api/getName', (req, res) => {
     res.json({ name: "Library Website" });
 });
 
+app.get('/api/getImage', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.sendFile('C:\Users\Laura\Documents\Adv Int Programing\Exersice\library_homepage.jpg');
+});
+
 app.listen(port, () =>{
     console.log (`Server running on https://three909-exercise.onrender.com/`);
 });
