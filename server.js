@@ -36,6 +36,16 @@ app.get("/story/:genre", (req, res) => {
     res.status(200).send(`You selected the ${genre} genre.`);
 });
 
+app.get('/api/getName', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.json({ name: "Story Maker Machine (Laura K)" });
+});
+
+app.get('/api/getImage', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.sendFile(path.join(__dirname,"library_homepage.jpg"));
+});
+
 app.use( (req, res) => {
     res.status(404).send("You have wandered too far from your quest. " + "Return to the library and find your path again.");
 })
