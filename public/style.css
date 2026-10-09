@@ -1,0 +1,37 @@
+
+body {
+    margin: 0;
+    padding: 40px;
+    background-color: #f4eee4;
+    color: #35271f;
+    font-family: Georgia, serif;
+}
+
+header {
+    text-align: center;
+    padding: 30px;
+}
+
+main {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fffaf2;
+    border: 1px solid #d6c4a8;
+    border-radius: 8px;
+    text-align: center;
+}
+
+a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    background-color: #493629;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+a:hover {
+    background-color: #72533b;
+}
