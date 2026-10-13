@@ -212,12 +212,13 @@ app.post("/generate-story", (req, res) => {
         <body>
             <header>
                 <h1>Your Story Begins...</h1>
-                <h1>${escapeHTML(storyTitle)}</h1>
             </header>
 
             <main>
                 <article>
-                    <h2>${escapeHTML(character.name)}</h2>
+                    <h2><strong>Title: </strong>${escapeHTML(storyTitle)}</h2>
+
+                    <p><strong>Main Chracter: </strong>${escapeHTML(character.name)}</p>
 
                     <p><strong>Genre:</strong> ${escapeHTML(genre)} | <strong>Setting:</strong> ${escapeHTML(setting)}</p>
 
