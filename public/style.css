@@ -1,37 +1,227 @@
-
 body {
     margin: 0;
-    padding: 40px;
+    padding: 20px;
     background-color: #f4eee4;
-    color: #35271f;
+    color: #541411;
     font-family: Georgia, serif;
+    isolation: isolate;
+}
+
+/* Background image layer */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: url("/images/homepage_background.jpg");
+    opacity: 0.1;
+    pointer-events: none;
 }
 
 header {
     text-align: center;
-    padding: 30px;
+    padding: 5px;
 }
 
 main {
-    max-width: 700px;
-    margin: 30px auto;
-    padding: 30px;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px 20px;
     background-color: #fffaf2;
     border: 1px solid #d6c4a8;
     border-radius: 8px;
     text-align: center;
 }
 
-a {
+a, form button, #chooseGenre {
     display: inline-block;
-    margin-top: 15px;
     padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
     background-color: #493629;
     color: white;
+    font-family: inherit;
+    font-size: 16px;
     text-decoration: none;
-    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
 }
 
-a:hover {
+a {
+    margin-top: 15px;
+}
+
+a:hover, form button:hover, #chooseGenre:hover {
     background-color: #72533b;
 }
+
+/* Character creation form */
+form label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    text-align: left;
+}
+
+form input[type="text"], form select {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 450px;
+    padding: 10px;
+    border: 1px solid #b9a58b;
+    border-radius: 4px;
+    background-color: #fffdf9;
+    color: #35271f;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+
+
+/* Genre and setting selection pages */
+#settingOptions {
+    margin: 25px 0;
+}
+
+#settingOptions label {
+    display: inline-block;
+    margin: 8px 0;
+    padding: 14px 18px;
+    background: #fffaf2;
+    border: 1px solid #d6c4a8;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#settingOptions label:hover {
+    border-color: #72533b;
+    background: #f1e5d3;
+}
+
+#settingOptions input {
+    accent-color: #493629;
+}
+
+main article {
+    margin: 16px 0;
+    padding: 20px;
+    background: #fffaf2;
+    border: 1px solid #d6c4a8;
+    border-radius: 8px;
+}
+
+#refreshTitle{
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #35271f;
+    border-radius: 4px;
+    background-color: #493629;
+    color: white;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#storyTitle{
+    font-size: 22px;
+}
+/* ========================================
+   GENRE BOOK CAROUSEL
+   ======================================== */
+
+/* Give the carousel enough room for the 3D slides. */
+.genre-swiper {
+    width: 95%;
+    max-width: 850px;
+    padding: 35px 0 55px;
+    overflow: hidden;
+}
+
+/* Each slide has its own width so neighbouring
+   covers can appear beside the centre cover. */
+.genre-swiper .swiper-slide {
+    width: 220px;
+    height: 340px;
+    transition: opacity 0.3s ease;
+}
+
+/* The cover itself fills the slide. */
+.genre-cover {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 85%;
+    padding: 24px 20px;
+    overflow: hidden;
+    color: white;
+    border: 5px solid white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Add a subtle inner frame like a printed book cover. */
+.genre-cover::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    border: 1px solid white;
+}
+
+/* Keep the cover text and decoration above the frame. */
+.genre-cover h3,
+.genre-cover p,
+.cover-decoration {
+    position: relative;
+    z-index: 1;
+}
+
+.genre-cover h3 {
+    margin: 0 0 12px;
+    font-size: 27px;
+    letter-spacing: 1px;
+}
+
+.genre-cover p {
+    margin: 0 0 20px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Large decorative symbol near the top of each cover. */
+.cover-decoration {
+    margin-bottom: auto;
+    padding-top: 30px;
+    font-size: 76px;
+    line-height: 1;
+}
+
+/* ROMANCE: warm, soft colours and a heart motify. */
+.romance-cover {
+    background: #630A4E;
+}
+
+/* MYSTERY: a shadowy, atmospheric cover. */
+.mystery-cover {
+    background: #635A0A;
+}
+
+/* DYSTOPIAN: a stark futuristic colour palette. */
+.dystopian-cover {
+    background: #204533;
+}
+
+.fantasy-cover{
+    background: #112754;
+}
+
+/* Dim the covers that are not currently selected. */
+.genre-swiper .swiper-slide:not(.swiper-slide-active) {
+    opacity: 0.3;
+}
+

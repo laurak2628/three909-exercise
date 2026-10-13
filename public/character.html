@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Character</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="character.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Create Your Character</h1>
+        <p>Every great story needs a main character.</p>
+        <p id="storyDetails"></p>
+        <!-- The story title will be loaded using AJAX. -->
+        <p id="storyTitle">Finding a title for your story...</p>
+        <button type="button" id="refreshTitle"> Choose Another Title</button>
+    </header>
+    <main>
+        <form action="/generate-story" method="POST">
+            <!-- Preserve the choices made on the previous page. -->
+            <input type="hidden" name="genre" id="genre">
+            <input type="hidden" name="setting" id="setting">
+            <input type="hidden" name="storyTitle" id="storyTitleInput">
+
+            <label for="name">Character Name</label>
+            <input type="text" id="name" name="name" maxlength="40" required>
+
+            <label for="pronouns">Pronouns:</label>
+            <select id="pronouns" name="pronouns" required>
+                <option value="">Select your pronouns</option>
+                <option value="she">Female (she/her)</option>
+                <option value="he">Male (he/him)</option>
+                <option value="they">They/them</option>
+            </select>
+
+            <label for="hairColour">Hair Colour</label>
+            <select id="hairColour" name="hairColour" required>
+                <option value="">Choose a hair colour</option>
+                <option value="black">Black</option>
+                <option value="brown">Brown</option>
+                <option value="blonde">Blonde</option>
+                <option value="red">Red</option>
+            </select> 
+
+            <label for="hairStyle">Hair Style</label>
+            <select id="hairStyle" name="hairStyle" required>
+                <option value="">Choose a hair style</option>
+                <option value="straight">Straight</option>
+                <option value="wavy">Wavy</option>
+                <option value="curly">Curly</option>
+            </select>
+
+            <label for="hairLength">Hair Length</label>
+            <select id="hairLength" name="hairLength" required>
+                <option value="">Choose a hair length</option>
+                <option value="short">Short</option>
+                <option value="shoulder-length">Shoulder-length</option>
+                <option value="long">Long</option>
+            </select>
+
+            <label for="eyeColour">Eye Colour</label>
+            <select id="eyeColour" name="eyeColour" required>
+                <option value="">Choose an eye colour</option>
+                <option value="brown">Brown</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="hazel">Hazel</option>
+            </select>
+
+            <label for="clothing">Clothing Style</label>
+            <select id="clothing" name="clothing" required>
+                <option value="">Choose a clothing style</option>
+                <option value="casual">Casual</option>
+                <option value="formal">Formal</option>
+                <option value="vintage">Vintage</option>
+            </select>
+
+            <button type="submit">Create My Story</button>
+        </form>
+    </main>
+</body>
+</html>
