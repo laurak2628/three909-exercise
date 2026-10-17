@@ -6,7 +6,7 @@
     <title>Choose Your Genre</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="/swiper/swiper-bundle.min.css">
-    <!-- defer makes sure the HTML loads before our JavaScript runs. -->
+    <!-- defer makes sure the html loads before our js runs. -->
     <script src="/swiper/swiper-bundle.min.js" defer></script>
     <script src="genres.js" defer></script>
 
@@ -19,14 +19,16 @@
     <main>
         <h2>What kind of story will you create?</h2>
         <p>Browse the covers and bring your chosen genre to the centre.</p>        
-        <!-- Main Swiper carousel container. -->
+        <!-- main swiper carousel container -->
         <div class="swiper genre-swiper">
             <div class="swiper-wrapper">
 
                 <!-- Each swiper-slide represents one genre. -->
+                 <!--copied emojis https://www.posterpresentations.com/alt-code-cheatsheet.html?srsltid=AU7gw4WavxJISYmZ4njpibgd5L9bWfP0duuze49OjV4UltGiVtijuKTq -->
+                 <!-- will create cover images as next update -->
                 <div class="swiper-slide" data-genre="romance">
                     <div class="genre-cover romance-cover">
-                        <span class="cover-decoration" aria-hidden="true">♡</span>
+                        <span class="cover-decoration">💖</span>
                         <h3>Romance</h3>
                         <p>Love, connection and unexpected beginnings.</p>
                     </div>
@@ -34,7 +36,7 @@
 
                 <div class="swiper-slide" data-genre="mystery">
                     <div class="genre-cover mystery-cover">
-                        <span class="cover-decoration" aria-hidden="true">?</span>
+                        <span class="cover-decoration" >⌛</span>
                         <h3>Mystery</h3>
                         <p>Secrets waiting to be uncovered.</p>
                     </div>
@@ -42,7 +44,7 @@
 
                 <div class="swiper-slide" data-genre="dystopian">
                     <div class="genre-cover dystopian-cover">
-                        <span class="cover-decoration" aria-hidden="true">⌁</span>
+                        <span class="cover-decoration">⚡</span>
                         <h3>Dystopian</h3>
                         <p>A future where survival changes everything.</p>
                     </div>
@@ -50,7 +52,7 @@
 
                 <div class="swiper-slide" data-genre="fantasy">
                     <div class="genre-cover fantasy-cover">
-                        <span class="cover-decoration" aria-hidden="true">☆</span>
+                        <span class="cover-decoration">⭐</span>
                         <h3>Fantasy</h3>
                         <p>A world of magic and mythical creatures hidden beyond the ordinary.</p>
                     </div>
@@ -58,16 +60,14 @@
 
             </div>
 
-            <!-- Swiper uses these elements for navigation and pagination. -->
-            <div class="swiper-button-prev" aria-label="Previous genre"></div>
-            <div class="swiper-button-next" aria-label="Next genre"></div>
+            <!--swiper uses these elements for navigation and pagination -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
             <div class="swiper-pagination"></div>
         </div>
 
-        <!-- The JavaScript will use the active slide's genre. -->
-        <button type="button" id="chooseGenre">
-            Choose This Genre
-        </button>
+        <!--the js will use the active slide's genre-->
+        <button type="button" id="chooseGenre"> Choose This Genre </button>
     </main>
 </body>
 </html>

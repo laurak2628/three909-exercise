@@ -1,3 +1,5 @@
+//searched different types of pronouns to fit different sceanrions in a story
+//https://www.english-grammar-revolution.com/list-of-pronouns.html
 const pronounOptions = {
 she: {
     subject: "she",
@@ -24,6 +26,7 @@ they: {
     have: "have"
 }};
 
+//saves each paragraph per genre 
 const storyOpenings = {
     romance: {
         "coffee shop": (c) => [
@@ -74,12 +77,13 @@ const storyOpenings = {
     }
 };
 
+//stores all title options based on genre
 const storyTitles = {
     romance: {
         "coffee shop": [
             "The Space Between Sips", 
             "One More Cup with You",
-            "A Table for Two"
+            "Coffee & Chemistry"
         ],
     },
 

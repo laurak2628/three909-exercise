@@ -12,13 +12,13 @@
         <h1>Create Your Character</h1>
         <p>Every great story needs a main character.</p>
         <p id="storyDetails"></p>
-        <!-- The story title will be loaded using AJAX. -->
+        <!-- the story title will be loaded using ajax. -->
         <p id="storyTitle">Finding a title for your story...</p>
         <button type="button" id="refreshTitle"> Choose Another Title</button>
     </header>
     <main>
         <form action="/generate-story" method="POST">
-            <!-- Preserve the choices made on the previous page. -->
+            <!--save the choices made on the previous page -->
             <input type="hidden" name="genre" id="genre">
             <input type="hidden" name="setting" id="setting">
             <input type="hidden" name="storyTitle" id="storyTitleInput">
