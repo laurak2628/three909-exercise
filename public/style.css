@@ -52,9 +52,7 @@ a {
     margin-top: 15px;
 }
 
-a:hover, form button:hover, #chooseGenre:hover {
-    background-color: #72533b;
-}
+
 
 /* Character creation form */
 form label {
@@ -78,8 +76,6 @@ form input[type="text"], form select {
     font-family: inherit;
     font-size: 16px;
 }
-
-
 
 /* Genre and setting selection pages */
 #settingOptions {

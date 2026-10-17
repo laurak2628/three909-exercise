@@ -216,38 +216,26 @@ app.post("/generate-story", (req, res) => {
         </head>
 
         <body>
-            <header>
-                <h1>Your Story Begins...</h1>
-            </header>
-
             <main>
-                <article>
-                    <h2><strong>Title: </strong>${_.escape(storyTitle)}</h2>
+                <h2>${_.escape(storyTitle)}</h2>
 
-                    <p><strong>Main Character: </strong>${_.escape(character.name)}</p>
+                <p><strong>Main Character: </strong>${_.escape(character.name)}</p>
 
-                    <p><strong>Genre:</strong> ${_.escape(genre)} | <strong>Setting:</strong> ${_.escape(setting)}</p>
+                <p><strong>Genre:</strong> ${_.escape(genre)} | <strong>Setting:</strong> ${_.escape(setting)}</p>
 
-                    <p><strong>Appearance:</strong> ${_.escape(hairLength)} ${_.escape(hairStyle)}, ${_.escape(hairColour)} hair, ${_.escape(eyeColour)} eyes</p>
+                <p><strong>Appearance:</strong> ${_.escape(hairLength)} ${_.escape(hairStyle)}, ${_.escape(hairColour)} hair, ${_.escape(eyeColour)} eyes</p>
 
-                    <p><strong>Clothing:</strong> ${_.escape(clothing)}</p>
+                <p><strong>Clothing:</strong> ${_.escape(clothing)}</p>
 
-                </article>
+                ${paragraphs.map(paragraph => `<p>${_.escape(paragraph)}</p>`).join("")}
 
-                <article>
-                    <h2>Chapter One</h2>
+                <p><em>What happens next is up to you...</em></p>
 
-                    ${paragraphs.map(paragraph => `<p>${_.escape(paragraph)}</p>`).join("")}
-
-                    <p><em>What happens next is up to you...</em></p>
-
-                    <form action="/download-story" method="POST">
-                        <textarea name="storyText" hidden>${_.escape(downloadText)}</textarea>
-                        <button type="submit">Download Your Story</button>
-                    </form>
-                </article>
-
-                <a href="/">Return to the Library</a>
+                <form action="/download-story" method="POST">
+                    <textarea name="storyText" hidden>${_.escape(downloadText)}</textarea>
+                    <button type="submit">Download Your Story</button>
+                    <a href="/">Return to the Library</a>
+                </form>
             </main>
         </body>
         </html>
